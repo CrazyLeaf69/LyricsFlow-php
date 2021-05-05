@@ -1,6 +1,9 @@
 $(document).ready(async function(){
   var token = "gqefLsr-j3RSR4AHtaEkdQ_UAoDhcUudk0qnYJzxKBYZiLmie3xcDrFg5oC-qVoD";
   songIdArray = $('.vidIdsOfPlaylist').text().split(' | ');
+  if (songIdArray[0] == "") {
+    songIdArray.splice(0, 1);
+  }
   songIdArray.forEach(element => {
     Promises.push( fetch(`https://api.genius.com/songs/${element}?access_token=${token}`) );
   });
@@ -94,7 +97,9 @@ function sortAndDisplay() {
 
 // -------------------------------------------------
 function toPrefix (labelValue) {
-
+  if (labelValue === undefined) {
+    return "unavailable"
+  }
   // Nine Zeroes for Billions
   return Math.abs(Number(labelValue)) >= 1.0e+9
 

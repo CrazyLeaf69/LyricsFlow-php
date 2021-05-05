@@ -70,7 +70,7 @@ async function getSong(id) {
       <div class="info">
           <h1>${titleWfeat}</h1>
           <h2>By: ${artist}</h2>
-          <h3>Popularity: ${views}</h2>
+          <h3>Popularity: ${toPrefix(views)}</h2>
       </div>
     </div>`
     let showResults = document.querySelector("#song");
@@ -137,4 +137,25 @@ function fancyTimeFormat(duration)
     ret += "" + mins + ":" + (secs < 10 ? "0" : "");
     ret += "" + secs;
     return ret;
+}
+
+function toPrefix (labelValue) {
+  if (labelValue === undefined) {
+    return "unavailable"
+  }
+  // Nine Zeroes for Billions
+  return Math.abs(Number(labelValue)) >= 1.0e+9
+
+  ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+  // Six Zeroes for Millions 
+  : Math.abs(Number(labelValue)) >= 1.0e+6
+
+  ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+  // Three Zeroes for Thousands
+  : Math.abs(Number(labelValue)) >= 1.0e+3
+
+  ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+
+  : Math.abs(Number(labelValue));
+
 }
