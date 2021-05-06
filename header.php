@@ -22,7 +22,7 @@
   <body>
     <header>
     <nav class="navbar navbar-expand-md">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" id="burgerbtn" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="fas fa-bars"></span>
         </button>
         <div class="nav navbar-toggler">
