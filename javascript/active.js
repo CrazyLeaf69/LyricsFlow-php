@@ -9,6 +9,17 @@ $(document).ready(async function(){
   });
 window.addEventListener('resize', reportWindowSize);
 
+$( "#burgerbtn" ).click(function() {
+    setTimeout(() => {
+        if ($(".collapsed").length > 0) {
+            $(".jumbotron").attr("style","display: flex;");
+        }
+        else {
+            $(".jumbotron").attr("style","display: none;");
+        }
+    }, 0);
+  });
+
 function reportWindowSize() {
     if (window.innerWidth>767) {
         $(".nav-toggle").attr("style","display: block;");
@@ -17,6 +28,7 @@ function reportWindowSize() {
         $(".nav-toggle").attr("style","display: none;");
     }
 }
+
 
 // active function
 const currentsite = window.location.href
