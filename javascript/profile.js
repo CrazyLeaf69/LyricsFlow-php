@@ -47,6 +47,12 @@ function getSongInfo(data, i) {
 
 function sortAndDisplay() {
   setTimeout(() => {
+    if (resultValues.length != songIdArray.length) {
+      // results not ready yet
+      sortAndDisplay();
+      return;
+    }
+    // results ready
     for (let i = 0; i < songIdArray.length; i++) {
       const OrderedId = songIdArray[i];
       for (let j = 0; j < resultValues.length; j++) {

@@ -474,6 +474,11 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
     border: 2px solid #3AFFB0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 800px) {
+    .signup {
+        width: 90%;
+    }
+}
 .signup input,button {
     margin: 0.5rem;
 }
